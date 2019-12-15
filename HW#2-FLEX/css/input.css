@@ -1,0 +1,171 @@
+.desc__graph, ul {
+  position: relative; }
+  .desc__graph:before, ul:before {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: rgba(109, 24, 38, 0.877);
+    position: absolute; }
+
+html {
+  background-color: #771921;
+  display: flex;
+  justify-content: center; }
+
+body {
+  padding: 25px;
+  margin: 50px;
+  overflow: hidden;
+  background-image: url("/img/back.png");
+  background-repeat: no-repeat;
+  height: 600px;
+  width: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.container {
+  border-radius: 15px;
+  background-color: #fff;
+  width: 600px;
+  height: 400px;
+  display: flex; }
+
+.city-wrapper {
+  background: url("/img/tokyo.png");
+  margin: 0;
+  width: 50%;
+  height: 100%;
+  position: relative;
+  border-radius: 15px 0 0 15px; }
+
+.city__img {
+  display: block;
+  margin: auto;
+  margin-top: 35px; }
+
+.location {
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  width: 100%;
+  display: block;
+  color: white;
+  text-align: center;
+  font-family: "Dosis", sans-serif;
+  font-weight: 200; }
+
+.city__adj {
+  background-color: rgba(63, 38, 50, 0.822);
+  padding: 25px;
+  font-size: 28pt; }
+
+.city__name {
+  background-color: rgba(109, 24, 38, 0.877);
+  padding: 31px;
+  font-size: 18pt;
+  border-radius: 0 0 0 15px; }
+
+.desc-wrapper {
+  margin: 0;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.desc__data {
+  color: #771921;
+  font-size: 70pt;
+  text-align: center;
+  font-family: "Dosis", sans-serif;
+  font-weight: 300; }
+
+.desc__graph img {
+  padding-top: 15px; }
+
+ul {
+  padding: 0;
+  list-style: none;
+  color: #771921;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  font-family: "Dosis", sans-serif;
+  font-weight: 600; }
+  ul li {
+    margin-top: 20px; }
+  ul .symbol_weather {
+    margin-bottom: 10px; }
+  ul .dOfw {
+    padding-bottom: 10px; }
+  ul .days {
+    position: relative; }
+    ul .days:before {
+      content: "";
+      width: 100%;
+      height: 1px;
+      background-color: rgba(109, 24, 38, 0.877);
+      position: absolute;
+      left: 0;
+      top: -5px; }
+    ul .days .morning {
+      padding-bottom: 5px; }
+    ul .days .night {
+      color: #3f2632; }
+
+@media (max-width: 1024px) and (min-width: 600px) {
+  html {
+    background-color: #771921;
+    display: flex;
+    justify-content: center;
+    align-items: center; } }
+@media (max-width: 600px) {
+  html {
+    background-color: #fff; }
+
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+
+  .container {
+    height: 100%;
+    flex-direction: column; }
+
+  .city-wrapper {
+    width: 100%;
+    height: 50%;
+    border-radius: 0px; }
+    .city-wrapper .city__img {
+      margin-bottom: 35px; }
+    .city-wrapper .location {
+      position: relative; }
+
+  .desc-wrapper {
+    display: block;
+    width: 100%; }
+
+  .desc__graph {
+    display: flex;
+    justify-content: center; }
+
+  ul {
+    display: flex;
+    justify-content: center; }
+    ul li {
+      margin-right: 30px; }
+      ul li:last-child {
+        margin-right: 0; }
+
+  .city__adj {
+    padding: 10px; }
+
+  .city__name {
+    padding: 10px;
+    border-radius: 0px; } }
+
+/*# sourceMappingURL=input.css.map */

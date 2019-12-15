@@ -1,0 +1,253 @@
+$color_light_0opacity:#771921;
+$color_light:rgba(109, 24, 38, 0.877);
+$color_dark: rgba(63, 38, 50, 0.822);
+$color_dark_0opacity: rgb(63, 38, 50);
+$font_size1: 18pt;
+$font_size2: 28pt;
+$font_size3: 70pt;
+$font_family: 'Dosis', sans-serif;
+
+
+%line-before {
+    position: relative;
+    &:before{
+        content:"";
+        width: 100%;
+        height: 1px;
+        background-color: $color_light ; 
+        position: absolute;
+    
+    }
+}
+
+html {
+    background-color: $color_light_0opacity; 
+}
+
+body {
+    margin: 50px;
+    overflow: hidden;
+    background-image: url("/img/back.png");
+    background-repeat: no-repeat;
+    height: 600px;
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px;
+    background-color: #fff;
+    width: 600px;
+    height: 400px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-self: center;
+}
+
+.city-wrapper {
+    background: url("/img/tokyo.png");
+    border-radius: 15px 0 0 15px;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.city {
+    display: grid;
+    grid-template-rows: 250px 150px;   
+}
+
+.city__img {
+    margin: auto;
+}
+
+.location {
+    bottom: 0;
+    color: white;
+    text-align: center;
+    font-family: $font_family;
+    font-weight: 200;
+    display: grid;
+    grid-template-rows: 45% 55%;  
+}
+
+.city__adj {
+    background-color: $color_dark; 
+    font-size: $font_size2;
+    align-self: center;
+    padding: 10px;
+}
+
+.city__name {
+    background-color: $color_light; 
+    font-size: $font_size1;
+    border-radius: 0 0 0 15px;
+    align-self: center;
+    padding: 30px;
+}
+
+.desc-wrapper {
+    margin: auto;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    border-radius: 0 0 15px 15px;
+}
+
+.desc__data {
+    color:  $color_light_0opacity; 
+    font-size: $font_size3;
+    font-family: $font_family;
+    font-weight: 300;
+}
+
+.desc__graph {
+    img {
+        padding-top: 15px;
+    }
+    @extend %line-before;
+}
+
+
+ul {
+    padding: 0;
+    list-style: none;
+    color:  $color_light_0opacity; 
+    font-family: $font_family;
+    font-weight: 600;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    justify-items: center;
+    grid-gap: 15px;
+    
+    @extend %line-before;
+
+    li {
+        margin-top: 20px;
+        text-align: center;
+        margin-right: 10px;
+    }
+
+    .symbol_weather {
+    margin-bottom: 10px;
+    }
+
+    .dOfw{
+    padding-bottom: 10px;
+    }
+
+    .days {
+        position: relative;
+        &:before{
+            content:"";
+            width: 100%;
+            height: 1px;
+            background-color:$color_light; 
+            position: absolute;
+            left: 0;
+            top: -5px;
+        } 
+
+        .morning {
+        padding-bottom: 5px;
+        }
+
+        .night {
+        color:$color_dark_0opacity; 
+        }
+    }
+}
+
+@media (max-width: 1024px) and (min-width:600px){
+    html {
+        background-color: $color_light_0opacity; 
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    body {
+        width: auto;
+        margin-top: 50px;
+        overflow: hidden;
+        background-image: none;
+        background-repeat: no-repeat;
+    }
+    
+    .container {
+        grid-template-columns: 0px auto 0px;
+        width: auto;
+    }
+    
+    .city-wrapper {
+        background: url("/img/tokyo.png");
+        border-radius: 15px 15px 0 0;
+        width: auto;
+        grid-column-start: 2;
+        grid-column-end: 3; 
+    }
+    
+    .city {  
+        display: grid;
+        grid-template-rows: 150px 100px;    
+    }
+    
+    .city__img {
+        margin: auto;
+    }
+    
+    .location {
+        bottom: 0;
+        text-align: center;
+        font-family: $font_family;
+        font-weight: 200;
+        display: grid;
+        grid-template-rows: 45% 55%;  
+        align-items: center; 
+    }
+    
+    .city__adj {
+        padding: 0;
+        background-color: $color_dark; 
+        font-size: $font_size2;
+        justify-self: stretch;
+    }
+    
+    .city__name {
+        padding: 15px;
+        background-color: $color_light; 
+        font-size: $font_size1;
+    }
+  
+    .desc-wrapper {
+        width: 100%;
+        background-color: #fff;
+        margin: auto;
+        grid-column-start: 2;
+        grid-column-end: 3;
+    }
+
+    .desc-mobile { 
+        display: grid;
+        grid-template-columns: 50% 50%;
+        align-items: center;
+        .desc__data {
+        text-align: center;
+        }
+        .desc__graph {
+        text-align: center;
+        &::before {
+            display: none;
+        }
+      }
+    }
+    
+   ul{
+        padding: 0;
+        grid-gap: 15px;
+    }
+
+    
+}
