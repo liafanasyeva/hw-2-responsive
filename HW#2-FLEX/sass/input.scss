@@ -30,7 +30,7 @@ body {
     padding: 25px;
     margin: 50px;
     overflow: hidden;
-    background-image: url("img/back.png");
+    background-image: url(../img/back.png);
     background-repeat: no-repeat;
     height: 600px;
     width: 800px;
@@ -48,7 +48,7 @@ body {
 }
 
 .city-wrapper {
-    background: url("img/tokyo.png");
+    background: url(../img/tokyo.png);
     margin: 0;
     width: 50%;
     height: 100%;
@@ -131,7 +131,7 @@ ul {
     margin-bottom: 10px;
     }
 
-    .day{
+    .days{
     padding-bottom: 10px;
     }
 
