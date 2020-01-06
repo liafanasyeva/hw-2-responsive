@@ -11,16 +11,19 @@ html {
   background-color: #771921; }
 
 body {
-  margin: 50px;
+  margin: 100px;
+  display: grid;
   overflow: hidden;
-  background-image: url("/img/back.png");
+  background-image: url(../img/back.png);
   background-repeat: no-repeat;
   height: 600px;
   width: 800px;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  grid-template-rows: 400px 100px; }
 
 .container {
+  margin: 100px;
   margin-left: auto;
   margin-right: auto;
   border-radius: 15px;
@@ -29,20 +32,32 @@ body {
   height: 400px;
   display: grid;
   grid-template-columns: 50% 50%;
-  justify-self: center; }
+  grid-row-start: 1;
+  grid-row-end: 2;
+  justify-self: center;
+  display: -ms-grid;
+  -ms-grid-columns: 50% 50%;
+  -ms-grid-column-align: center; }
 
 .city-wrapper {
-  background: url("/img/tokyo.png");
+  background: url(../img/tokyo.png);
   border-radius: 15px 0 0 15px;
   grid-column-start: 1;
-  grid-column-end: 2; }
+  grid-column-end: 2;
+  -ms-grid-column: 1; }
 
 .city {
+  text-align: center;
   display: grid;
-  grid-template-rows: 250px 150px; }
+  grid-template-rows: 250px 150px;
+  display: -ms-grid;
+  -ms-grid-rows: 230px 170px; }
 
 .city__img {
-  margin: auto; }
+  height: 150px;
+  width: 150px;
+  margin: auto;
+  -ms-grid-row: 1; }
 
 .location {
   bottom: 0;
@@ -51,26 +66,33 @@ body {
   font-family: "Dosis", sans-serif;
   font-weight: 200;
   display: grid;
-  grid-template-rows: 45% 55%; }
+  grid-template-rows: 45% 55%;
+  display: -ms-grid;
+  -ms-grid-row: 2;
+  -ms-grid-rows: 45% 55%; }
 
 .city__adj {
   background-color: rgba(63, 38, 50, 0.822);
   font-size: 28pt;
   align-self: center;
-  padding: 10px; }
+  padding: 10px;
+  -ms-grid-row: 1; }
 
 .city__name {
   background-color: rgba(109, 24, 38, 0.877);
   font-size: 18pt;
   border-radius: 0 0 0 15px;
   align-self: center;
-  padding: 30px; }
+  padding: 30px;
+  -ms-grid-row: 2; }
 
 .desc-wrapper {
+  text-align: center;
   margin: auto;
   grid-column-start: 2;
   grid-column-end: 3;
-  border-radius: 0 0 15px 15px; }
+  border-radius: 0 0 15px 15px;
+  -ms-grid-column: 2; }
 
 .desc__data {
   color: #771921;
@@ -78,10 +100,24 @@ body {
   font-family: "Dosis", sans-serif;
   font-weight: 300; }
 
-.desc__graph img {
-  padding-top: 15px; }
+.desc {
+  -ms-grid-rows: 50% 50%; }
+
+.desc-mobile {
+  -ms-grid-row: 1;
+  -ms-grid-rows: 50% 50%; }
+
+.desc__data {
+  -ms-grid-row: 1; }
+
+.desc__graph {
+  -ms-grid-row: 2; }
+  .desc__graph img {
+    padding-top: 15px;
+    width: 100%; }
 
 ul {
+  text-align: center;
   padding: 0;
   list-style: none;
   color: #771921;
@@ -90,18 +126,28 @@ ul {
   display: grid;
   grid-template-columns: 30% 30% 30%;
   justify-items: center;
-  grid-gap: 15px; }
+  display: -ms-grid;
+  -ms-grid-columns: 30% 30% 30%;
+  -ms-grid-column-align: center;
+  -ms-grid-row: 2; }
   ul li {
     margin-top: 20px;
     text-align: center;
-    margin-right: 10px; }
+    margin-right: 10px;
+    margin-left: 35px; }
+  ul #li1 {
+    -ms-grid-column: 1; }
+  ul #li2 {
+    -ms-grid-column: 2; }
+  ul #li3 {
+    -ms-grid-column: 3; }
   ul .symbol_weather {
     margin-bottom: 10px; }
-  ul .dOfw {
-    padding-bottom: 10px; }
   ul .days {
+    padding-bottom: 10px; }
+  ul .day {
     position: relative; }
-    ul .days:before {
+    ul .day:before {
       content: "";
       width: 100%;
       height: 1px;
@@ -109,9 +155,9 @@ ul {
       position: absolute;
       left: 0;
       top: -5px; }
-    ul .days .morning {
+    ul .day .morning {
       padding-bottom: 5px; }
-    ul .days .night {
+    ul .day .night {
       color: #3f2632; }
 
 @media (max-width: 1024px) and (min-width: 600px) {
@@ -119,29 +165,47 @@ ul {
     background-color: #771921; } }
 @media (max-width: 600px) {
   body {
+    display: grid;
+    height: 100%;
     width: auto;
     margin-top: 50px;
     overflow: hidden;
     background-image: none;
-    background-repeat: no-repeat; }
+    grid-template-rows: 400px 100px; }
 
   .container {
+    margin: 0;
     grid-template-columns: 0px auto 0px;
-    width: auto; }
+    width: auto;
+    height: auto;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    -ms-grid-columns: 100%;
+    -ms-grid-rows: 50% 50%; }
 
   .city-wrapper {
-    background: url("/img/tokyo.png");
+    background: url("../img/tokyo.png");
+    background-repeat: repeat-x;
     border-radius: 15px 15px 0 0;
     width: auto;
+    display: grid;
     grid-column-start: 2;
-    grid-column-end: 3; }
+    grid-column-end: 3;
+    display: -ms-grid;
+    -ms-grid-column: 1;
+    -ms-grid-row: 1;
+    -ms-grid-columns: 100%; }
 
   .city {
-    display: grid;
-    grid-template-rows: 150px 100px; }
+    grid-template-rows: 150px 100px;
+    text-align: center;
+    -ms-grid-columns: 100%;
+    -ms-grid-rows: 230px; }
 
   .city__img {
-    margin: auto; }
+    margin: auto;
+    text-align: center;
+    -ms-grid-row-align: center; }
 
   .location {
     bottom: 0;
@@ -149,35 +213,61 @@ ul {
     font-family: "Dosis", sans-serif;
     font-weight: 200;
     display: grid;
+    align-items: center;
     grid-template-rows: 45% 55%;
-    align-items: center; }
+    display: -ms-grid;
+    -ms-grid-columns: 100%;
+    -ms-grid-rows: 45% 55%;
+    -ms-grid-row-align: center; }
 
   .city__adj {
     padding: 0;
+    justify-self: stretch;
     background-color: rgba(63, 38, 50, 0.822);
     font-size: 28pt;
-    justify-self: stretch; }
+    -ms-grid-row: 1;
+    -ms-grid-column-align: stretch; }
 
   .city__name {
+    width: 100%;
     padding: 15px;
     background-color: rgba(109, 24, 38, 0.877);
-    font-size: 18pt; }
+    font-size: 18pt;
+    -ms-grid-row: 2; }
 
   .desc-wrapper {
     width: 100%;
     background-color: #fff;
+    height: 100%;
     margin: auto;
     grid-column-start: 2;
-    grid-column-end: 3; }
+    grid-column-end: 3;
+    -ms-grid-column: 1;
+    -ms-grid-row: 2; }
 
   .desc-mobile {
+    padding-left: 50px;
     display: grid;
+    text-align: center;
     grid-template-columns: 50% 50%;
-    align-items: center; }
+    margin: auto;
+    align-items: center;
+    display: -ms-grid;
+    -ms-grid-row-align: center;
+    -ms-grid-column-align: center; }
     .desc-mobile .desc__data {
-      text-align: center; }
+      margin-right: 50px;
+      margin: 0;
+      text-align: center;
+      -ms-grid-column: 1;
+      -ms-grid-row: 1; }
     .desc-mobile .desc__graph {
-      text-align: center; }
+      padding-left: 50px;
+      padding-top: 20px;
+      align-items: center;
+      text-align: center;
+      -ms-grid-column: 2;
+      -ms-grid-row: 1; }
       .desc-mobile .desc__graph::before {
         display: none; }
 
