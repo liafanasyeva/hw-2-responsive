@@ -16,7 +16,7 @@ body {
   padding: 25px;
   margin: 50px;
   overflow: hidden;
-  background-image: url("img/back.png");
+  background-image: url(../img/back.png);
   background-repeat: no-repeat;
   height: 600px;
   width: 800px;
@@ -32,7 +32,7 @@ body {
   display: flex; }
 
 .city-wrapper {
-  background: url("img/tokyo.png");
+  background: url(../img/tokyo.png);
   margin: 0;
   width: 50%;
   height: 100%;
@@ -96,7 +96,7 @@ ul {
     margin-top: 20px; }
   ul .symbol_weather {
     margin-bottom: 10px; }
-  ul .day {
+  ul .days {
     padding-bottom: 10px; }
   ul .day {
     position: relative; }
@@ -169,4 +169,3 @@ ul {
     border-radius: 0px; } }
 
 /*# sourceMappingURL=input.css.map */
-
